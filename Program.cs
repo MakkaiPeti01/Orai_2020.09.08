@@ -10,6 +10,8 @@ namespace Orai_2020._09._08
     {
         static void Main(string[] args)
         {
+            
+            Console.ReadKey();
         }
     }
 }
