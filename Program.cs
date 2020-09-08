@@ -10,10 +10,18 @@ namespace Orai_2020._09._08
     {
         static void Main(string[] args)
         {
+            //gépválasztása
             Random vel = new Random();
             string[] lehetoseg = new string[] { "Kő", "Papír", "Olló"};
             int gep_valaszt = vel.Next(0, 3);
             Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
+
+            //játékosválasztása
+            int jatekosvalaszt;
+            Console.WriteLine("Kő {0}, Papír {1}, Olló {2}");
+            Console.Write("Válasz: ");
+            jatekosvalaszt = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Játékos választása {0}", lehetoseg[jatekosvalaszt]);
             Console.ReadKey();
         }
     }
