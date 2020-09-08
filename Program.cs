@@ -22,7 +22,26 @@ namespace Orai_2020._09._08
             Console.Write("Válasz: ");
             jatekosvalaszt = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Játékos választása {0}", lehetoseg[jatekosvalaszt]);
-            Console.ReadKey();
+
+            //csata
+            if (jatekosvalaszt == 0 && gep_valaszt == 1
+                ||
+                (jatekosvalaszt == 1 && gep_valaszt == 2)
+                ||
+                (jatekosvalaszt == 2 && gep_valaszt == 0)
+                )
+            {
+                Console.WriteLine("Vesztettél");
+            }
+            else if (gep_valaszt==jatekosvalaszt)
+            {
+                Console.WriteLine("Döntetlen");
+            }
+            else
+            {
+                Console.WriteLine("Nyertél");
+            }
+                Console.ReadKey();
         }
     }
 }
