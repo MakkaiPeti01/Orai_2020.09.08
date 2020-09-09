@@ -8,6 +8,21 @@ namespace Orai_2020._09._08
 {
     class Program
     {
+        static void eredmeny_kiiras(int gep, int ember)
+            {
+                switch(GepNyer(gep, ember))
+                {
+                case 0:
+                    Console.WriteLine("Döntetelen");
+                    break;
+                case 1:
+                    Console.WriteLine("Skynet nyert");
+                    break;
+                case 2:
+                    Console.WriteLine("Játékos nyert");
+                    break;
+            }       
+            }
         static int GepNyer(int gep, int ember)
         {
             if (ember == 0 && gep == 1 //Gép nyer
@@ -42,19 +57,8 @@ namespace Orai_2020._09._08
             Console.Write("Válasz: ");
             jatekosvalaszt = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep_valaszt], lehetoseg[jatekosvalaszt]);
-            switch(GepNyer(gep_valaszt, jatekosvalaszt))
-                {
-                case 0:
-                    Console.WriteLine("Döntetelen");
-                    break;
-                case 1:
-                    Console.WriteLine("Skynet nyert");
-                    break;
-                case 2:
-                    Console.WriteLine("Játékos nyert");
-                    break;
-            }       
-               Console.ReadKey();
+            eredmeny_kiiras(gep_valaszt, jatekosvalaszt);
+            Console.ReadKey();
         }
     }
 }

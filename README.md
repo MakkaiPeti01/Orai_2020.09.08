@@ -8,7 +8,7 @@
 	- Papír legyőzi a követ.
 	- Olló legyőzi a papírt.
   
-	[ ] A nyerés megállapítását kiszervezzük metódusba
+	[x] A nyerés megállapítását kiszervezzük metódusba
 		
 		- Ember nyer()
 		- Visszaadott érték 0/1/2
@@ -16,3 +16,5 @@
               - 1 Gép nyer
     		- 2 Ember nyer
 - [x] Kiírjuk az eredményt
+		
+	-Kiírás külön metódusba
