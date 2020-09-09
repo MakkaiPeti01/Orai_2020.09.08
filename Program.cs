@@ -21,26 +21,30 @@ namespace Orai_2020._09._08
             Console.WriteLine("Kő {0}, Papír {1}, Olló {2}");
             Console.Write("Válasz: ");
             jatekosvalaszt = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Játékos választása {0}", lehetoseg[jatekosvalaszt]);
 
             //csata
-            if (jatekosvalaszt == 0 && gep_valaszt == 1
+            if (jatekosvalaszt == 0 && gep_valaszt == 1 //Gép nyer
                 ||
                 (jatekosvalaszt == 1 && gep_valaszt == 2)
                 ||
                 (jatekosvalaszt == 2 && gep_valaszt == 0)
                 )
             {
+                Console.WriteLine();
                 Console.WriteLine("Vesztettél");
             }
-            else if (gep_valaszt==jatekosvalaszt)
+            else if (gep_valaszt==jatekosvalaszt) //Döntetlen
             {
+                Console.WriteLine();
                 Console.WriteLine("Döntetlen");
             }
-            else
+            else //Játékos nyer
             {
+                Console.WriteLine();
                 Console.WriteLine("Nyertél");
             }
+                Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalaszt]);
+                Console.WriteLine("Gép választása: {0}", lehetoseg[gep_valaszt]);
                 Console.ReadKey();
         }
     }
