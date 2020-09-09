@@ -8,8 +8,10 @@ namespace Orai_2020._09._08
 {
     class Program
     {
+        static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló"};
         static void eredmeny_kiiras(int gep, int ember)
             {
+                Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep], lehetoseg[ember]);
                 switch(GepNyer(gep, ember))
                 {
                 case 0:
@@ -43,20 +45,24 @@ namespace Orai_2020._09._08
                 return 2;
             }
         }
-        static void Main(string[] args)
-        {
-            //gépválasztása
-            Random vel = new Random();
-            string[] lehetoseg = new string[] { "Kő", "Papír", "Olló"};
-            int gep_valaszt = vel.Next(0, 3);
-            //Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
-
-            //játékosválasztása
-            int jatekosvalaszt;
+        static int jatekos_valaszt()
+            {
             Console.WriteLine("Kő {0}, Papír {1}, Olló {2}");
             Console.Write("Válasz: ");
-            jatekosvalaszt = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep_valaszt], lehetoseg[jatekosvalaszt]);
+            return Convert.ToInt32(Console.ReadLine());
+            }
+        static int gepvalasztas()
+            {
+                 Random vel = new Random();
+                 return vel.Next(0, 3);
+            }
+        static void Main(string[] args)
+        {
+            //gépválasztása        
+            //Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
+            //játékosválasztása
+            int jatekosvalaszt=jatekos_valaszt();
+            int gep_valaszt=gepvalasztas();
             eredmeny_kiiras(gep_valaszt, jatekosvalaszt);
             Console.ReadKey();
         }
