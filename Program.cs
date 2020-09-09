@@ -8,44 +8,53 @@ namespace Orai_2020._09._08
 {
     class Program
     {
+        static int GepNyer(int gep, int ember)
+        {
+            if (ember == 0 && gep == 1 //Gép nyer
+                ||
+                (ember == 1 && gep == 2)
+                ||
+                (ember == 2 && gep == 0)
+                )
+            {
+                return 1;
+            }
+            else if (gep==ember) //Döntetlen
+            {
+                return 0;
+            }
+                else //Játékos nyer
+            {
+                return 2;
+            }
+        }
         static void Main(string[] args)
         {
             //gépválasztása
             Random vel = new Random();
             string[] lehetoseg = new string[] { "Kő", "Papír", "Olló"};
             int gep_valaszt = vel.Next(0, 3);
-            Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
+            //Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
 
             //játékosválasztása
             int jatekosvalaszt;
             Console.WriteLine("Kő {0}, Papír {1}, Olló {2}");
             Console.Write("Válasz: ");
             jatekosvalaszt = Convert.ToInt32(Console.ReadLine());
-
-            //csata
-            if (jatekosvalaszt == 0 && gep_valaszt == 1 //Gép nyer
-                ||
-                (jatekosvalaszt == 1 && gep_valaszt == 2)
-                ||
-                (jatekosvalaszt == 2 && gep_valaszt == 0)
-                )
-            {
-                Console.WriteLine();
-                Console.WriteLine("Vesztettél");
-            }
-            else if (gep_valaszt==jatekosvalaszt) //Döntetlen
-            {
-                Console.WriteLine();
-                Console.WriteLine("Döntetlen");
-            }
-            else //Játékos nyer
-            {
-                Console.WriteLine();
-                Console.WriteLine("Nyertél");
-            }
-                Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalaszt]);
-                Console.WriteLine("Gép választása: {0}", lehetoseg[gep_valaszt]);
-                Console.ReadKey();
+            Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep_valaszt], lehetoseg[jatekosvalaszt]);
+            switch(GepNyer(gep_valaszt, jatekosvalaszt))
+                {
+                case 0:
+                    Console.WriteLine("Döntetelen");
+                    break;
+                case 1:
+                    Console.WriteLine("Skynet nyert");
+                    break;
+                case 2:
+                    Console.WriteLine("Játékos nyert");
+                    break;
+            }       
+               Console.ReadKey();
         }
     }
 }
