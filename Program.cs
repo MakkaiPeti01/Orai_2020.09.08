@@ -9,6 +9,9 @@ namespace Orai_2020._09._08
     class Program
     {
         static string[] lehetoseg = new string[] { "Kő", "Papír", "Olló"};
+        static int gepNyer=0;
+        static int jatekosNyer=0;
+        static int menet=0;
         static void eredmeny_kiiras(int gep, int ember)
             {
                 Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep], lehetoseg[ember]);
@@ -34,6 +37,7 @@ namespace Orai_2020._09._08
                 (ember == 2 && gep == 0)
                 )
             {
+                gepNyer++;
                 return 1;
             }
             else if (gep==ember) //Döntetlen
@@ -42,6 +46,7 @@ namespace Orai_2020._09._08
             }
                 else //Játékos nyer
             {
+                jatekosNyer++;
                 return 2;
             }
         }
@@ -77,13 +82,18 @@ namespace Orai_2020._09._08
             bool tovabb=true;
             while (tovabb)
 	        {
+            menet++;
 	        int jatekosvalaszt=jatekos_valaszt();
             int gep_valaszt=gepvalasztas();
             eredmeny_kiiras(gep_valaszt, jatekosvalaszt); 
             tovabb=Akarjatszani();
 	        }
+            Statisztika();
             Console.ReadKey();         
         }
-        
+        private static void Statisztika()
+            {
+            Console.WriteLine("Játékos nyer: {0} \t Gép nyer: {1} \t Menetek száma: {2}", jatekosNyer, gepNyer, menet);
+            }
     }
 }

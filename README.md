@@ -8,7 +8,7 @@
 	- Papír legyőzi a követ.
 	- Olló legyőzi a papírt.
   
-	[x] A nyerés megállapítását kiszervezzük metódusba
+	- [x] A nyerés megállapítását kiszervezzük metódusba
 		
 		- Ember nyer()
 		- Visszaadott érték 0/1/2
@@ -22,3 +22,8 @@
 ## Játékmenet 2.0
 
 - [x] Addig játszunk, amíg ki nem lépünk a játékból.
+
+ - [x] Statisztika megvalósítása
+	
+- Győzelem
+- Vereség
