@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Orai_2020._09._08
 {
@@ -74,12 +75,17 @@ namespace Orai_2020._09._08
             else
                 return false;
             }
+        static void Statisztika()
+            {
+            Console.WriteLine("Játékos nyer: {0} \t Gép nyer: {1} \t Menetek száma: {2}", jatekosNyer, gepNyer, menet);
+            }
         static void Main(string[] args)
         {
             //gépválasztása        
             //Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
-            //játékosválasztása
+            //játéko0sválasztása
             bool tovabb=true;
+            statisztika_fajlbol();
             while (tovabb)
 	        {
             menet++;
@@ -91,9 +97,24 @@ namespace Orai_2020._09._08
             Statisztika();
             Console.ReadKey();         
         }
-        private static void Statisztika()
+
+        private static void statisztika_fajlbol()
+        {
+            StreamReader stat = new StreamReader("statisztika.txt");        
+            int[] adat=new int[3];
+            while (!stat.EndOfStream)
             {
-            Console.WriteLine("Játékos nyer: {0} \t Gép nyer: {1} \t Menetek száma: {2}", jatekosNyer, gepNyer, menet);
-            }
+                string[] sor = stat.ReadLine().Split(';');
+                //adat[0] = int.Parse(sor[0]);
+                //adat[1] = int.Parse(sor[1]);
+                //adat[2] = int.Parse(sor[2]);
+                for (int i = 0; i < adat.Length; i++)
+			    {
+                   adat[i] = int.Parse(sor[i]);
+			    }
+                Console.WriteLine("{0} {1} {2}",adat[0],adat[1],adat[2]);
+            }                     
+            Console.WriteLine("------------Statisztika vége------------");
+        }
     }
 }

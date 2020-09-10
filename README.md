@@ -13,7 +13,7 @@
 		- Ember nyer()
 		- Visszaadott érték 0/1/2
     		- 0 Döntetlen
-              - 1 Gép nyer
+             - 1 Gép nyer
     		- 2 Ember nyer
 - [x] Kiírjuk az eredményt
 		
@@ -25,5 +25,12 @@
 
  - [x] Statisztika megvalósítása
 	
-- Győzelem
-- Vereség
+   - Győzelem
+   - Vereség
+  
+- [ ] Eredmények fájlba írása és megjelenítése
+	
+	- 1.értek Menetek száma
+    - 2.értek Játékos győzelmei
+    - 3.értek Gép győzelmei 
+    - Split (;)
