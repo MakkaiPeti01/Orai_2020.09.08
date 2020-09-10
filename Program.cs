@@ -13,6 +13,7 @@ namespace Orai_2020._09._08
         static int gepNyer=0;
         static int jatekosNyer=0;
         static int menet=0;
+        static int[] adat=new int[3];
         static void eredmeny_kiiras(int gep, int ember)
             {
                 Console.WriteLine("Gép {0} --- Játékos {1}", lehetoseg[gep], lehetoseg[ember]);
@@ -86,6 +87,7 @@ namespace Orai_2020._09._08
             //játéko0sválasztása
             bool tovabb=true;
             statisztika_fajlbol();
+            statisztika_fajlba();
             while (tovabb)
 	        {
             menet++;
@@ -100,8 +102,7 @@ namespace Orai_2020._09._08
 
         private static void statisztika_fajlbol()
         {
-            StreamReader stat = new StreamReader("statisztika.txt");        
-            int[] adat=new int[3];
+            StreamReader stat = new StreamReader("statisztika.txt");                   
             while (!stat.EndOfStream)
             {
                 string[] sor = stat.ReadLine().Split(';');
@@ -115,6 +116,16 @@ namespace Orai_2020._09._08
                 Console.WriteLine("{0} {1} {2}",adat[0],adat[1],adat[2]);
             }                     
             Console.WriteLine("------------Statisztika vége------------");
+            stat.Close();
+        }
+        private static void statisztika_fajlba()
+        {
+            StreamWriter iro=new StreamWriter("statisztika2.txt");	
+            for (int i = 0; i < 3; i++)
+			{
+                iro.Write(adat[i]+" ");
+			}
+            iro.Close();
         }
     }
 }
