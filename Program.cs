@@ -86,8 +86,7 @@ namespace Orai_2020._09._08
             //Console.WriteLine("valasztasok {0} ", lehetoseg[gep_valaszt]);
             //játéko0sválasztása
             bool tovabb=true;
-            statisztika_fajlbol();
-            statisztika_fajlba();
+            statisztika_fajlbol();        
             while (tovabb)
 	        {
             menet++;
@@ -97,6 +96,7 @@ namespace Orai_2020._09._08
             tovabb=Akarjatszani();
 	        }
             Statisztika();
+            statisztika_fajlba();
             Console.ReadKey();         
         }
 
@@ -120,11 +120,11 @@ namespace Orai_2020._09._08
         }
         private static void statisztika_fajlba()
         {
-            StreamWriter iro=new StreamWriter("statisztika2.txt");	
-            for (int i = 0; i < 3; i++)
-			{
-                iro.Write(adat[i]+" ");
-			}
+            string adat =menet.ToString()+";"+
+                jatekosNyer.ToString()+";"+
+                gepNyer.ToString();
+            StreamWriter iro=new StreamWriter("statisztika.txt", true);	
+            iro.WriteLine(adat);
             iro.Close();
         }
     }

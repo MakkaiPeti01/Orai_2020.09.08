@@ -28,7 +28,7 @@
    - Győzelem
    - Vereség
   
-- [ ] Eredmények fájlba írása és megjelenítése
+- [x] Eredmények fájlba írása és megjelenítése
 	
 	- 1.értek Menetek száma
     - 2.értek Játékos győzelmei
